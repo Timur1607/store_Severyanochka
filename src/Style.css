@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('./Fonts/Rubik.eot'),
+    url('./Fonts/Rubik.otf'),
+    url('./Fonts/Rubik.ttf'),
+    url('./Fonts/Rubik.woff'),
+    url('./Fonts/Rubik.woff2');
+}
