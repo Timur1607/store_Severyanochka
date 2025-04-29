@@ -38,3 +38,9 @@
     height: 24px;
     margin-left: 30px;
 }
+
+.promotion__cards {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
