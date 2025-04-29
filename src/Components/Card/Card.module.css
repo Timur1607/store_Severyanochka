@@ -1,0 +1,110 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    width: 272px;
+    background: var(--Main-Surface, #FFF);
+
+    /* Default/XS */
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+.card__all {
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
+    padding: 8px;
+}
+
+.card__img {
+    max-height: 160px;
+    object-fit: contain;
+    background-color: #FFF;
+}
+
+.card__prices {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.card__withCardP {
+    color: var(--Main-onSurface, #414141);
+
+    /* Desc/Text-Bold/M */
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 27px */
+}
+
+.card__withoutCardP {
+    color: var(--Grayscale-Hardest, #606060);
+
+    /* Desc/Text/S */
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+}
+
+.card__type {
+    color: var(--Grayscale-Light, #BFBFBF);
+
+    /* Desc/Text/XS */
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 18px */
+}
+
+.card__name {
+    margin-bottom: 8px;
+    color: var(--Main-onSurface, #414141);
+    max-height: 48px;
+    overflow: hidden;
+    /* Desc/Text/S */
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+}
+
+.card__rating {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 8px;
+    gap: 4px;
+}
+
+.card__btn {
+    cursor: pointer;
+    width: -webkit-fill-available;
+    display: flex;
+    background-color: transparent;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 1px solid var(--Main-Secondary, #70C05B);
+    color: var(--Main-Secondary, #70C05B);
+    text-align: center;
+
+    /* Desc/Text/S */
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+}
