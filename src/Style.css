@@ -1,3 +1,7 @@
+html {
+    background: var(--Main-BGPage, #FBF8EC);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;

@@ -1,0 +1,40 @@
+.promotion {
+    margin-top: 80px;
+}
+
+.promotion__titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promotion__title {
+    color: var(--Main-onSurface, #414141);
+    /* Desc/Header/M */
+    font-family: 'Rubik';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 54px */
+}
+
+.promotion__link {
+    text-decoration-line: none;
+    display: flex;
+    color: var(--Grayscale-Hardest, #606060);
+    text-align: center;
+    /* Desc/Text/S */
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+}
+
+.promotion__linkSVG {
+    width: 24px;
+    height: 24px;
+    margin-left: 30px;
+}
