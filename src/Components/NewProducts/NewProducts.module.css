@@ -1,0 +1,46 @@
+.newProducts {
+    margin-top: 120px;
+}
+
+.newProducts__titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newProducts__title {
+    color: var(--Main-onSurface, #414141);
+    /* Desc/Header/M */
+    font-family: 'Rubik';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 54px */
+}
+
+.newProducts__link {
+    text-decoration-line: none;
+    display: flex;
+    color: var(--Grayscale-Hardest, #606060);
+    text-align: center;
+    /* Desc/Text/S */
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+}
+
+.newProducts__linkSVG {
+    width: 24px;
+    height: 24px;
+    margin-left: 30px;
+}
+
+.newProducts__cards {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
