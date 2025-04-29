@@ -1,8 +1,10 @@
 .header{
+    box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.10);
     padding: 11px 0;
     background: var(---surface, #FFF);
-    /* Default/S */
-    box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.10);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 .content{
     display: flex;
@@ -17,6 +19,7 @@
     justify-content: center;
     align-items: center;
     gap: 11.41px;
+    cursor: pointer;
 }
 .burger{
     width: 24px;
@@ -103,6 +106,7 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
 }
 .profile__section_text{
     color: var(--Main-onSurface, #414141);
@@ -120,6 +124,7 @@
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    cursor: pointer;
 }
 .profile__user_img{
     width: 40px;
@@ -139,6 +144,21 @@
     height: 40px;
     padding: 8px;
 }
+.catalog{
+    background-color: #fff;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    transition: 0.6s;
+    padding: 40px 0;
+}
+.catalog__elements{
+    display: flex;
+    gap: 24px;
+    row-gap: 40px;
+}
 @media screen and (max-width: 1150px){
     .search__button_text{
         display: none;
@@ -146,8 +166,6 @@
     .search__button{
         width: max-content;
     }
-}
-@media screen and (max-width: 1150px){
     .logo__text{
         display: none;
     }
@@ -169,5 +187,21 @@
     }
     .profile__user_button{
         display: none;
+    }
+}
+@media screen and (max-width: 570px){
+    .adaptive{
+        display: none;
+    }
+}
+@media screen and (max-width: 440px){
+    .profile{
+        display: none;
+    }
+    .search__button{
+        display: none;
+    }
+    .header{
+        padding: 8px 0;
     }
 }
