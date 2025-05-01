@@ -140,3 +140,9 @@
     border: 1px solid #F63;
     background: var(--Main-Primary, #F63);
 }
+
+@media screen and (max-width: 1325px) {
+    .card {
+        width: 224px;
+    }
+}

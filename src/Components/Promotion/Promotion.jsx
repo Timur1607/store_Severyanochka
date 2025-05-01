@@ -2,7 +2,9 @@ import s from './Promotion.module.css'
 import Container from '../Container/Container'
 import { data } from '/data.js'
 import Card from '../Card/Card'
-let stopper = 0
+let stopper = (window.innerWidth > 500 && window.innerWidth <= 1100) ? 3 : 4
+console.log(window.innerWidth, stopper);;
+
 export default function Promotion() {
     return (
         <>
@@ -21,8 +23,8 @@ export default function Promotion() {
                                     console.log(element)
                                     return (
                                         data[el][Object.keys(data[el])[index]]['items'].map((el, i) => {
-                                            if (el.prices.haveDiscount && stopper < 4) {
-                                                stopper += 1
+                                            if (el.prices.haveDiscount && stopper > 0) {
+                                                stopper -= 1
                                                 return (
                                                     <Card key={i} withCard={el.prices.price.withDiscount} withoutCard={el.prices.price.withoutDiscount} img={el.img} name={el.name}rating={el.rating} />
                                                 )
