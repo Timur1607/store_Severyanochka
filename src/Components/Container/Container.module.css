@@ -1,18 +1,8 @@
 .container{
-    max-width: 1440px;
+    max-width: 1240px;
     width: 100%;
-    padding: 0 116px;
+    padding: 0 16px;
     margin: 0 auto;
-}
-@media screen and (max-width: 1150px){
-    .container{
-        padding: 0 60px;
-    }
-}
-@media screen and (max-width: 768px){
-    .container{
-        padding: 0 16px;
-    }
 }
 @media screen and (max-width: 360px){
     .container{
