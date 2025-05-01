@@ -147,13 +147,14 @@
 .catalog{
     background-color: #fff;
     position: absolute;
-    top: -100%;
+    /* top: -100%; */
+    bottom: 100%;
     left: 0;
     z-index: 10;
     width: 100%;
     transition: all 0.6s ease-in-out;
-    padding: 40px 0;
-    background: var(--Main-Surface, #FFF);
+    padding: 25px 0;
+    /* background: var(--Main-Surface, #FFF); */
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
 }
 .catalog__elements{
@@ -171,7 +172,7 @@
     line-height: 150%;
     height: max-content;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.3s;
     text-decoration: none;
 }
 .catalog__elements_p:hover{
@@ -179,7 +180,7 @@
 }
 .profile__amedia{
     background-color: #FFF;
-    position: absolute;
+    position: sticky;
     bottom: 0;
     left: 0;
     display: none;
@@ -189,6 +190,11 @@
 }
 .profile__section_burger{
     padding: 1px;
+}
+.div{
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 @media screen and (max-width: 1150px){
     .search__button_text{
