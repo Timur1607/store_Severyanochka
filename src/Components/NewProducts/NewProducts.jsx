@@ -2,8 +2,9 @@ import s from './NewProducts.module.css'
 import Container from '../Container/Container'
 import { data } from '/data.js'
 import Card from '../Card/Card'
-let stopper = 0
+
 export default function NewProducts() {
+    let stopper = (window.innerWidth <= 965 && window.innerWidth > 545) ? 3 : 4
     return (
         <>
             <div className={s.newProducts}>
@@ -23,15 +24,15 @@ export default function NewProducts() {
                                         data[el][Object.keys(data[el])[index]]['items'].map((el, i) => {
                                             
                                             console.log(el.tags);
-                                            if (el.tags.new == true && stopper < 4) {
-                                                stopper += 1
+                                            if (el.tags.new == true && stopper > 0) {
+                                                stopper -= 1
                                                 if (el.prices.haveDiscount) {
                                                     return (
-                                                        <Card key={i} withCard={el.prices.price.withDiscount} withoutCard={el.prices.price.withoutDiscount} img={el.img} name={el.name}rating={el.rating} />
+                                                        <Card key={el.id} id={el.id} withCard={el.prices.price.withDiscount} withoutCard={el.prices.price.withoutDiscount} img={el.img} name={el.name}rating={el.rating} />
                                                     )
                                                 } else {
                                                     return (
-                                                        <Card key={i} withCard={el.prices.price} withoutCard={el.prices.price} img={el.img} name={el.name}rating={el.rating} />
+                                                        <Card key={el.id} id={el.id} withCard={el.prices.price} withoutCard={el.prices.price} img={el.img} name={el.name}rating={el.rating} />
                                                     )
                                                 }
                                             }

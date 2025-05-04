@@ -23,15 +23,35 @@
     align-items: center;
     gap: 8px;
     border-radius: 4px;
-    opacity: 0.5;
-    background: var(--Grayscale-Lightest, #F3F2F1);
+    background: rgba(243, 242, 241, 0.5);
     flex-shrink: 0;
 }
 
 .card__likeBTN {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;   
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.card__likeBTN path {
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.card__likeBTN:hover path {
+    fill: #ED1944;
+    stroke: #ED1944;
+}
+
+.momentLiked path {
+    fill: #ED1944;
+    stroke: #ED1944;
+}
+
+.momentDislike path {
+    fill: transparent;
+    stroke: gray;
 }
 
 .card__all {
@@ -41,10 +61,18 @@
     padding: 8px;
 }
 
-.card__img {
+.card__imgBlock {
+    display: flex;
+    align-items: center;
     max-height: 160px;
     object-fit: contain;
     background-color: #FFF;
+}
+
+.card__img {
+    width: 100%;
+    max-height: 160px;
+    object-fit: contain;
 }
 
 .card__prices {
@@ -139,4 +167,42 @@
     color: #FFF;
     border: 1px solid #F63;
     background: var(--Main-Primary, #F63);
+}
+
+@media screen and (max-width: 1170px) {
+    .card {
+        width: 224px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .card {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .card {
+        width: 160px;
+    }
+
+    .card__imgBlock {
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .card {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .card {
+        width: 160px;
+    }
+
+    .card__imgBlock {
+        height: 160px;
+    }
 }
