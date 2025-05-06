@@ -1,10 +1,10 @@
 import Container from '../Container/Container'
-import s from './Basket.module.css'
-export default function Basket(){
+import s from './Articles.module.css'
+export default function Articles(){
     return(
         <main>
             <Container>
-                <h1>Корзина</h1>
+                <h1>Статьи</h1>
             </Container>
         </main>
     )
