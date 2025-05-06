@@ -1,0 +1,28 @@
+.location{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.location__start{
+    color: var(--Main-onSurface, #414141);
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.location__start:hover{
+    color: #F63;
+}
+.location__end{
+    color: var(--Grayscale-Hard, #8F8F8F);
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}

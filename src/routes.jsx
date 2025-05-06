@@ -5,6 +5,10 @@ import Catalog from './Components/Catalog/Catalog'
 import Select from './Components/Select/Select'
 import Orders from './Components/Orders/Orders'
 import Basket from './Components/Basket/Basket'
+import Vacancies from './Components/Vacancies/Vacancies'
+import Articles from './Components/articles/articles'
+import About from './Components/About/About'
+import Contacts from './Components/Contacts/Contacts'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +34,22 @@ const router = createBrowserRouter([
       {
         path: 'basket',
         element: <Basket/>
+      },
+      {
+        path: 'vacancies',
+        element: <Vacancies/>
+      },
+      {
+        path: 'articles',
+        element: <Articles/>
+      },
+      {
+        path: 'about',
+        element: <About/>
+      },
+      {
+        path: 'contacts',
+        element: <Contacts/>
       },
     ]
   },
