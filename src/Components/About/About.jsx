@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import Container from '../Container/Container'
 import s from './About.module.css'
-import check from '/public/img/other/check.svg'
-import logo from '/public/img/logo/aboutLogo.svg'
+import check from '/img/other/check.svg'
+import logo from '/img/logo/aboutLogo.svg'
 import Location from '../Location/Location'
 export default function About(){
     const navigate = useNavigate()
@@ -13,7 +13,7 @@ export default function About(){
             </Container>
             <div className={s.about}>
                 <Container>
-                    <h2 className={s.about__h2}>О компании</h2>
+                    <h1 className={s.about__h2}>О компании</h1>
                     <p className={s.about__p}>Мы непрерывно развиваемся и работаем над совершенствованием сервиса, заботимся о наших клиентах, стремимся к лучшему будущему.</p>
                 </Container>
             </div>

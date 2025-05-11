@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import s from './Footer.module.css'
 import Container from '../Container/Container'
-import Logo from '/public/img/logo/footerLogo.svg'
+import Logo from '/img/logo/footerLogo.svg'
 export default function Footer(){
     const navigate = useNavigate()
 
