@@ -12,11 +12,11 @@ export default function Catalog(){
                     {Object.values(data).map((el)=> {
                         return(
                             Object.values(el).map((element, i)=> {
-                                console.log(Object.keys(el));
                                 return(
-                                    <div style={{backgroundImage: `url(/img/catalog/${Object.keys(el)[i]}.webp)`}} className={`${s.section} ${(i === 0 || i === 9 || i === 11) ? s.sectionB : ''}`} key={i}>
+                                    <div style={{backgroundImage: `url(/img/catalog/${Object.keys(el)[i]}.webp)`}} className={`${(i === 0 || i === 9 || i === 11) ? s.sectionB : s.section}`} key={i}>
                                         <p className={s.section__p}>{element.name}</p>
-                                        <div className={s.gradient}></div>
+                                        <div className={`${s.gradient} `}></div>
+                                        <div className={`${s.gradientHover}`}></div>
                                     </div>
                                 )
                             })

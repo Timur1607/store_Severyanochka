@@ -26,3 +26,15 @@
     font-weight: 400;
     line-height: 150%;
 }
+@media screen and (max-width: 768px){
+    .location{
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+}
+@media screen and (max-width: 360px){
+    .location{
+        margin-bottom: 8px;
+        gap: 4px;
+    }
+}
