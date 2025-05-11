@@ -2,13 +2,12 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import {data} from '../../../data'
 import s from './Header.module.css'
 import Container from '../Container/Container'
-import logo from '/public/img/logo/logo.svg'
-import UserImg from '/public/img/logo/userAvatar.png'
-import {useRef, useState} from 'react'
+import logo from '/img/logo/logo.svg'
+import UserImg from '/img/logo/userAvatar.png'
+import {useRef} from 'react'
 
 export default function Header(){
     const navigate = useNavigate()
-    const location = useLocation()
 
     const catalogEl = useRef(null)
     const headerEl = useRef(null)

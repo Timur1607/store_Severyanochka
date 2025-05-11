@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import s from '../Header/Header.module.css'
 import Container from '../Container/Container'
-import logo from '/public/img/logo/logo.svg'
-import UserImg from '/public/img/logo/userAvatar.png'
+import logo from '/img/logo/logo.svg'
+import UserImg from '/img/logo/userAvatar.png'
 export default function HeaderAmedia(){
     const navigate = useNavigate()
     const location = useLocation()
