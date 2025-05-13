@@ -10,7 +10,7 @@ if (localStorage.getItem('favourite') != undefined) {
 }
 export default function Card(props) {
     let flag = false
-    console.log(props.id);
+    // console.log(props.id);
 
 
     function setItem(el, id) {
@@ -20,9 +20,10 @@ export default function Card(props) {
                 flag = true
                 removeElement(index, el.target)
                 el.target.closest('svg').classList.add(s.momentDislike)
-            }            
+            }
         }
-        if (!flag) {el.target.closest('svg').classList.add(s.momentLiked)
+        if (!flag) {
+            el.target.closest('svg').classList.add(s.momentLiked)
             console.log(id)
             save.push(id)
             localStorage.setItem('favourite', JSON.stringify(save))
@@ -31,7 +32,7 @@ export default function Card(props) {
 
     function setStars(rating) {
         let toPush = []
-            
+
         for (let index = 0; index < rating; index++) {
             toPush.push(
                 <svg key={index} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -48,65 +49,126 @@ export default function Card(props) {
                 )
             }
         }
-        console.log(toPush);
+        // console.log(toPush);
         return toPush
     }
 
     function removeElement(index, el) {
-        
+
         el.closest('svg').classList.add(s.momentDislike)
         save.splice(index, 1)
         localStorage.setItem('favourite', JSON.stringify(save))
     }
-    return (
-        <>
-            <article key={props.id} data-id={props.id} className={s.card}>
-                <div className={s.card__imgBlock}>
-                    <img className={s.card__img} src={props.img} alt="" />
-                </div>
-                <div className={s.card__like}>
-                    {console.log(save, props.id)}
-                    {save.map((element, index) => {
-                        console.log(element, props.id);
-                        if (Number(props.id) == Number(element)) {
-                            flag = true
-                            return (
-                                <svg key={index} onClick={(el) => {removeElement(index, el.target)}} className={s.card__likeBTN} xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
-                                    <path d="M17.3653 0C15.1604 0 13.2067 1.07706 12 2.73408C10.7933 1.07706 8.84098 0 6.63474 0C2.9706 0 0 2.9706 0 6.63474C0 12.2098 12 21.2004 12 21.2004C12 21.2004 24 12.2098 24 6.63474C24 2.9706 21.0294 0 17.3653 0Z" stroke="#ED1944" fill="#ED1944" />
-                                </svg>
-                            )
-                        }
-                    })}
-                    {!flag &&
-                        <svg onClick={(el) => { setItem(el, el.target.closest('article').getAttribute('data-id'))}} className={s.card__likeBTN} xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
-                            <path d="M17.3653 0C15.1604 0 13.2067 1.07706 12 2.73408C10.7933 1.07706 8.84098 0 6.63474 0C2.9706 0 0 2.9706 0 6.63474C0 12.2098 12 21.2004 12 21.2004C12 21.2004 24 12.2098 24 6.63474C24 2.9706 21.0294 0 17.3653 0Z" stroke="gray" fill="transparent" />
-                        </svg>}
-                </div>
-                <div className={s.card__all}>
-                    <div className={s.card__prices}>
-                        {props.withCard == props.withoutCard ?
-                        <div className={s.card__withCard}>
-                            <p className={s.card__withCardP}>{props.withCard} <span>₽</span></p>
-                        </div>
-                        : 
-                        <>
-                        <div className={s.card__withCard}>
-                            <p className={s.card__withCardP}>{props.withCard} <span>₽</span></p>
-                            <p className={s.card__type}>С картой</p>
-                        </div>
-                        <div className={s.card__withoutCard}>
-                            <p className={s.card__withoutCardP}>{props.withoutCard} <span>₽</span></p>
-                            <p className={s.card__type}>Обычная</p>
-                        </div>
-                        </>}
+
+    if (!props.favourite) {
+        return (
+            <>
+                <article key={props.id} data-id={props.id} className={props.count > 0 ? s.card : `${s.card} ${s.opacityLow}`}>
+                    <div className={s.card__imgBlock}>
+                        <img className={s.card__img} src={props.img} alt="" />
                     </div>
-                    <p className={s.card__name}>{props.name}</p>
-                    <div className={s.card__rating}>
-                        {setStars(props.rating)}
+                    <div className={s.card__like}>
+                        {console.log(save, props.id)}
+                        {save.map((element, index) => {
+                            console.log(element, props.id);
+                            if (Number(props.id) == Number(element)) {
+                                flag = true
+                                return (
+                                    <svg key={index} onClick={(el) => { removeElement(index, el.target) }} className={s.card__likeBTN} xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                        <path d="M17.3653 0C15.1604 0 13.2067 1.07706 12 2.73408C10.7933 1.07706 8.84098 0 6.63474 0C2.9706 0 0 2.9706 0 6.63474C0 12.2098 12 21.2004 12 21.2004C12 21.2004 24 12.2098 24 6.63474C24 2.9706 21.0294 0 17.3653 0Z" stroke="#ED1944" fill="#ED1944" />
+                                    </svg>
+                                )
+                            }
+                        })}
+                        {!flag &&
+                            <svg onClick={(el) => { setItem(el, el.target.closest('article').getAttribute('data-id')) }} className={s.card__likeBTN} xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                <path d="M17.3653 0C15.1604 0 13.2067 1.07706 12 2.73408C10.7933 1.07706 8.84098 0 6.63474 0C2.9706 0 0 2.9706 0 6.63474C0 12.2098 12 21.2004 12 21.2004C12 21.2004 24 12.2098 24 6.63474C24 2.9706 21.0294 0 17.3653 0Z" stroke="gray" fill="transparent" />
+                            </svg>}
                     </div>
-                    <button className={s.card__btn}>В корзину</button>
-                </div>
-            </article>
-        </>
-    )
+                    <div className={s.card__all}>
+                        <div className={s.card__prices}>
+                            {props.withCard == props.withoutCard ?
+                                <div className={s.card__withCard}>
+                                    <p className={s.card__withCardP}>{props.withCard} <span>₽</span></p>
+                                </div>
+                                :
+                                <>
+                                    <div className={s.card__withCard}>
+                                        <p className={s.card__withCardP}>{props.withCard} <span>₽</span></p>
+                                        <p className={s.card__type}>С картой</p>
+                                    </div>
+                                    <div className={s.card__withoutCard}>
+                                        <p className={s.card__withoutCardP}>{props.withoutCard} <span>₽</span></p>
+                                        <p className={s.card__type}>Обычная</p>
+                                    </div>
+                                </>}
+                        </div>
+                        <p className={s.card__name}>{props.name}</p>
+                        <div className={s.card__rating}>
+                            {setStars(props.rating)}
+                        </div>
+                        <button className={props.count > 0 ? s.card__btn : `${s.card__btn} ${s.disableClick}`}>В корзину</button>
+                    </div>
+                </article>
+            </>
+        )
+    } else {
+        for (let index = 0; index < save.length; index++) {
+            if (Number(props.id) == Number(save[index])) {
+                
+                return (
+                    <>
+                        <article key={props.id} data-id={props.id} className={props.count > 0 ? s.card : `${s.card} ${s.opacityLow}`}>
+                            <div className={s.card__imgBlock}>
+                                <img className={s.card__img} src={props.img} alt="" />
+                            </div>
+                            <div className={s.card__like}>
+                                {/* {console.log(save, props.id)} */}
+                                {save.map((element, index) => {
+                                    // console.log(element, props.id);
+                                    if (Number(props.id) == Number(element)) {
+                                        flag = true
+                                        return (
+                                            <svg key={index} onClick={(el) => { removeElement(index, el.target) }} className={s.card__likeBTN} xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M17.3653 0C15.1604 0 13.2067 1.07706 12 2.73408C10.7933 1.07706 8.84098 0 6.63474 0C2.9706 0 0 2.9706 0 6.63474C0 12.2098 12 21.2004 12 21.2004C12 21.2004 24 12.2098 24 6.63474C24 2.9706 21.0294 0 17.3653 0Z" stroke="#ED1944" fill="#ED1944" />
+                                            </svg>
+                                        )
+                                    }
+                                })}
+                                {!flag &&
+                                    <svg onClick={(el) => { setItem(el, el.target.closest('article').getAttribute('data-id')) }} className={s.card__likeBTN} xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                        <path d="M17.3653 0C15.1604 0 13.2067 1.07706 12 2.73408C10.7933 1.07706 8.84098 0 6.63474 0C2.9706 0 0 2.9706 0 6.63474C0 12.2098 12 21.2004 12 21.2004C12 21.2004 24 12.2098 24 6.63474C24 2.9706 21.0294 0 17.3653 0Z" stroke="gray" fill="transparent" />
+                                    </svg>}
+                            </div>
+                            <div className={s.card__all}>
+                                <div className={s.card__prices}>
+                                    {props.withCard == props.withoutCard ?
+                                        <div className={s.card__withCard}>
+                                            <p className={s.card__withCardP}>{props.withCard} <span>₽</span></p>
+                                        </div>
+                                        :
+                                        <>
+                                            <div className={s.card__withCard}>
+                                                <p className={s.card__withCardP}>{props.withCard} <span>₽</span></p>
+                                                <p className={s.card__type}>С картой</p>
+                                            </div>
+                                            <div className={s.card__withoutCard}>
+                                                <p className={s.card__withoutCardP}>{props.withoutCard} <span>₽</span></p>
+                                                <p className={s.card__type}>Обычная</p>
+                                            </div>
+                                        </>}
+                                </div>
+                                <p className={s.card__name}>{props.name}</p>
+                                <div className={s.card__rating}>
+                                    {setStars(props.rating)}
+                                </div>
+                                <button className={props.count > 0 ? s.card__btn : `${s.card__btn} ${s.disableClick}`}>В корзину</button>
+                            </div>
+                        </article>
+                    </>
+                )
+
+            }
+        }
+    }
 }

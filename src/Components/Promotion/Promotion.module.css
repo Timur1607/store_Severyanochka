@@ -11,7 +11,7 @@
 .promotion__title {
     color: var(--Main-onSurface, #414141);
     /* Desc/Header/M */
-    font-family: 'Rubik';
+    font-family: 'Rubik-Bold';
     font-size: 36px;
     font-style: normal;
     font-weight: 700;

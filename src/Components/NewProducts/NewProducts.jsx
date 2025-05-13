@@ -24,15 +24,15 @@ export default function NewProducts() {
                                         data[el][Object.keys(data[el])[index]]['items'].map((el, i) => {
                                             
                                             console.log(el.tags);
-                                            if (el.tags.new == true && stopper > 0) {
+                                            if (el.tags.new == true && stopper > 0 && el.count > 0) {
                                                 stopper -= 1
                                                 if (el.prices.haveDiscount) {
                                                     return (
-                                                        <Card key={el.id} id={el.id} withCard={el.prices.price.withDiscount} withoutCard={el.prices.price.withoutDiscount} img={el.img} name={el.name}rating={el.rating} />
+                                                        <Card count={el.count} favourite={false} key={el.id} id={el.id} withCard={el.prices.price.withDiscount} withoutCard={el.prices.price.withoutDiscount} img={el.img} name={el.name} rating={el.rating} />
                                                     )
                                                 } else {
                                                     return (
-                                                        <Card key={el.id} id={el.id} withCard={el.prices.price} withoutCard={el.prices.price} img={el.img} name={el.name}rating={el.rating} />
+                                                        <Card count={el.count} favourite={false} key={el.id} id={el.id} withCard={el.prices.price} withoutCard={el.prices.price} img={el.img} name={el.name}rating={el.rating} />
                                                     )
                                                 }
                                             }
