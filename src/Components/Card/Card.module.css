@@ -4,6 +4,7 @@
     flex-direction: column;
     border-radius: 4px;
     width: 272px;
+    height: 349px;
     background: var(--Main-Surface, #FFF);
 
     /* Default/XS */
@@ -167,6 +168,20 @@
     color: #FFF;
     border: 1px solid #F63;
     background: var(--Main-Primary, #F63);
+}
+
+.disableClick {
+    cursor: default;
+} 
+
+.disableClick:hover {
+    color: var(--Main-Secondary, #70C05B);
+    border: 1px solid var(--Main-Secondary, #70C05B);
+    background: transparent;
+}
+
+.opacityLow {
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 1170px) {

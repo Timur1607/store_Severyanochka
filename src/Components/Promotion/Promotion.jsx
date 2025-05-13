@@ -23,10 +23,10 @@ export default function Promotion() {
                                     console.log(element)
                                     return (
                                         data[el][Object.keys(data[el])[index]]['items'].map((el, i) => {
-                                            if (el.prices.haveDiscount && stopper > 0) {
+                                            if (el.prices.haveDiscount && stopper > 0 && el.count > 0) {
                                                 stopper -= 1
                                                 return (
-                                                    <Card key={el.id} id={el.id} withCard={el.prices.price.withDiscount} withoutCard={el.prices.price.withoutDiscount} img={el.img} name={el.name} rating={el.rating} />
+                                                    <Card count={el.count} favourite={false} key={el.id} id={el.id} withCard={el.prices.price.withDiscount} withoutCard={el.prices.price.withoutDiscount} img={el.img} name={el.name} rating={el.rating} />
                                                 )
                                             }
                                         })
