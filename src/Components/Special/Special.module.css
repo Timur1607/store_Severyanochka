@@ -24,6 +24,7 @@
 .special__card {
     display: flex;
     height: 200px;
+    overflow: hidden;
     width: 50%;
     border-radius: 4px;
 }
@@ -90,8 +91,6 @@
 }
 
 .card__img {
-    overflow: hidden;
-
     margin-left: 25px;
 }
 
@@ -132,5 +131,26 @@
     .card__img {
         display: flex;
         align-items: center;
+    }
+
+    .card__imgCard {
+        width: 165.794px;
+        height: 110.784px;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .card__img {
+        margin-left: 5px;
+    }
+
+    .special__card {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .special__cards {
+        flex-wrap: wrap;
     }
 }
