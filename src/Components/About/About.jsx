@@ -4,16 +4,17 @@ import s from './About.module.css'
 import check from '/img/other/check.svg'
 import logo from '/img/logo/aboutLogo.svg'
 import Location from '../Location/Location'
+import Title from '../Title/Title'
 export default function About(){
     const navigate = useNavigate()
     return(
         <main className={s.main}>
             <Container>
-                <Location props='О компании'/>
+                <Location props={['О компании']}/>
             </Container>
             <div className={s.about}>
                 <Container>
-                    <h1 className={s.about__h2}>О компании</h1>
+                    <Title props={'О компании'}/>
                     <p className={s.about__p}>Мы непрерывно развиваемся и работаем над совершенствованием сервиса, заботимся о наших клиентах, стремимся к лучшему будущему.</p>
                 </Container>
             </div>

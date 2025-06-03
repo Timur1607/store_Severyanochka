@@ -27,8 +27,6 @@ export default function Header(){
     const closeCatalog = () => {
 
         setTimeout(()=>{
-            console.log(check);
-            
             if(check === true){
                 const headerHeight = headerEl.current.offsetHeight
                 catalogEl.current.style.bottom = `-${catalogEl.current.offsetHeight}px` 
@@ -37,7 +35,19 @@ export default function Header(){
                 catalogEl.current.style.bottom = '100%'
             }
             check = false
-        }, 2000)
+        }, 1500)
+    }
+    function chapter(el){
+        navigate('/chapter', {
+            state: {
+                loc:{
+                    LocRu: `${el.currentTarget.textContent}`,
+                    LocEn: `${el.currentTarget.getAttribute('id')}`,
+                    prevLoc: [['Каталог', 'catalog'], [el.currentTarget.textContent, el.currentTarget.getAttribute('id')]],
+                }
+            }
+        })
+        catalogEl.current.style.bottom = '100%'
     }
     return(
         <>
@@ -120,7 +130,7 @@ export default function Header(){
                                 return(
                                     Object.values(el).map((element, i)=> {
                                         return(
-                                            <a href='#' className={s.catalog__elements_p} key={i}>{element.name}</a>
+                                            <a onClick={(el)=> chapter(el)} id={Object.keys(el)[i]} className={s.catalog__elements_p} key={i}>{element.name}</a>
                                         )
                                     })
                                 )

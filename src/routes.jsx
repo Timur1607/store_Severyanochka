@@ -9,6 +9,7 @@ import Vacancies from './Components/Vacancies/Vacancies'
 import Articles from './Components/articles/articles'
 import About from './Components/About/About'
 import Contacts from './Components/Contacts/Contacts'
+import Chapter from './Components/Chapter/Chapter'
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: 'contacts',
         element: <Contacts/>
+      },
+      {
+        path: 'chapter',
+        element: <Chapter/>
       },
     ]
   },
